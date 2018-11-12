@@ -9,18 +9,18 @@ const HistoriesContainer = styled.div`
 	padding-top: 50px;
 `
 const items=[
-	{url:'./images/paris.jpg'},
-	{url:'./images/korea.jpg'},
-	{url:'./images/oaxaca.jpg'},
-	{url:'./images/chernobyl.jpg'},
-	{url:'./images/best_photo.jpg'},
+	{ url : './images/paris.jpg', text : 'Paris' },
+	{ url : './images/korea.jpg', text : 'North Korea' },
+	{ url : './images/oaxaca.jpg', text : 'Oaxaca' },
+	{ url : './images/chernobyl.jpg', text : 'Chernobyl' },
+	{ url : './images/best_photo.jpg', text : 'Best Photo' },
 	];
 class Histories extends Component{
 	render() {
 		return(
 			<HistoriesContainer>
 				{items.map(function(item){
-					return <History src={item.url}/>
+					return <History src={item.url} text={item.text}/>
 				})}
 			</HistoriesContainer>
 		)

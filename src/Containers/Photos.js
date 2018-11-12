@@ -10,7 +10,7 @@ const PhotoContainer = styled.div`
 	margin-bottom: 20px;
 	max-width: 930px; inherit;
 `
-
+/*
 const items=[
 	{url:'./images_container_sq/container1.jpg', likes:'133k', comments:'220'},
 	{url:'./images_container_sq/container2.jpg', likes:'80k', comments:'820'},
@@ -31,14 +31,16 @@ const items=[
 	{url:'./images_container_sq/container17.jpg', likes:'72k', comments:'247'},
 	{url:'./images_container_sq/container18.jpg', likes:'80k', comments:'675'},
 	];
-
+*/
 class Photos extends Component{
 	render() {
 		return(
 			<PhotoContainer>
-				{items.map(function(item){
-					return <Photo src={item.url} likes={item.likes} comments={item.comments}/>
-				})}
+				{
+					this.props.photos.map(function(item){
+						return <Photo src={item.url} likes={item.likes} comments={item.comments}/>
+					})
+				}
 			</PhotoContainer>
 		)
 	}

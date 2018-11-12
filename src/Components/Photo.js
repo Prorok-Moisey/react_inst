@@ -4,6 +4,7 @@ import Dialog from './../images/white_dialog.png';
 import Heart from './../images/white_heart.png';
 
 const PhotoContainer = styled.div`
+	display: flex;
 	position: relative;
 	min-width: 31%;
 	max-width: 31%;	
@@ -17,51 +18,48 @@ const PhotoContainer = styled.div`
 	max-width: 32.5%;
 	min-width: 32.5%;
 	margin-bottom: 0%;
-	}
+	}		
 `
 const PhotoImg = styled.img`
 	min-width: 100%;
 	max-width: 100%;
 	transition: filter 0.5s;
-	filter: brightness(100%);
-	&:hover{
-		transition: filter 0.5s;
-		filter: brightness(50%);
-	}	
+	
 `
 const Middle = styled.div`
+	height: 100%;
+	width: 100%;
 	position: absolute;
-	top: 45%;
-	left: 25%;
+	top: 0px;
+	left: 0px;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	width: 50%;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 	color: white;
 	font-weight: bolder;
 	font-size: 16px;
-	@media(max-width:650px){
-		width:80px;
-		top: 35%;
-		left: 35%;
-	}
-	@media(max-width:400px){
-		width:80px;
-		top: 25%;
-		left: 25%;
-	}
-	transition: filter 0.5s;
-	filter: opacity(0%);
+
+	transition: all 0.3s;
+	opacity: 0;
 	&:hover{
-		transition: filter 0.5s;
-		filter: opacity(100%);
+		opacity: 1;
+		background-color: rgba(0,0,0,0.5);
+		transition: all 0.3s; 
+	}
+	@media(max-width:600px){
+		flex-direction: column;
 	}
 `
 const Img = styled.img`
 	height: 20px;
 	width: 20px;
+
 `
-const Likes = styled.div`	
+const Likes = styled.div`
+	@media(min-width:600px){
+		margin-right: 10%;
+	}
 `
 const Comments = styled.div`
 `
