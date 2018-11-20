@@ -15,8 +15,6 @@ const ContainerDiv = styled.div`
 	font-size: 16px;
 `
 
-
-
 class Label extends React.Component {
   render() {
     return(
@@ -26,10 +24,6 @@ class Label extends React.Component {
       )
   }
 }
-
-
-
-
 
 class Container extends React.Component {
   constructor(props) {
@@ -66,8 +60,8 @@ class Container extends React.Component {
         {mode}
         <Title />
         <Delitel buttons={[ 
-          {image: Posts, text: 'POSTS', isSelected: mode==='posts', onClick: () => this.switchMode('posts') },
-          {image: Tagged, text: 'TAGGED', isSelected: mode==='tagged', onClick: () => this.switchMode('tagged') },
+          {image: Posts, text: 'POSTS', isSelected: this.state.mode==='posts', onClick: () => this.switchMode('posts') },
+          {image: Tagged, text: 'TAGGED', isSelected: this.state.mode==='tagged', onClick: () => this.switchMode('tagged') },
           ]} />
         <Photos photos={posts} />
       </ContainerDiv>
