@@ -7,9 +7,14 @@ const PhotoContainer = styled.div`
 	flex-flow: row wrap;
 	justify-content: space-between;
 	margin:	auto;
+	padding: 0px 20px 0px 20px;
 	margin-bottom: 20px;
 	max-width: 930px; inherit;
-`
+	@media(max-width: 736px){
+	padding: 0px;
+	}
+\`;
+`;
 
 class Photos extends Component{
 	render() {

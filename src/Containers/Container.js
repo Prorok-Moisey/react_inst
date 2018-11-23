@@ -11,11 +11,14 @@ import Posts from './../images/posts.png';
 import Tagged from './../images/tagged.png';
 
 const ContainerDiv = styled.div`
-	padding: 140px 0px 0px 0px;
+	padding-top: 140px;
 	font-size: 16px;
-`
+	@media(max-width: 736px){
+	padding-top:  100px;
+	}
+`;
 
-class Label extends React.Component {
+/*class Label extends React.Component {
   render() {
     return(
       <div onClick={this.props.supaFunction} style={{border: 1, borderColor: 'black', borderStyle: 'solid'}}>
@@ -23,25 +26,25 @@ class Label extends React.Component {
       </div>
       )
   }
-}
+}*/
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
-    this.loveAndHappiness = this.loveAndHappiness.bind(this);
+    /*this.loveAndHappiness = this.loveAndHappiness.bind(this);*/
     this.switchMode = this.switchMode.bind(this);
     this.state = {
-      count: 1,
+    /*  count: 1,*/
       mode: 'posts', //tagged
     };
   }
 
-  loveAndHappiness() {
+/*  loveAndHappiness() {
     const oldCount = this.state.count;
     this.setState({
       count: oldCount+1
     })
-  }
+  }*/
 
   switchMode(newMode) {
     this.setState({
@@ -56,10 +59,8 @@ class Container extends React.Component {
       Data.content.posts : Data.content.tagged;
     return (
       <ContainerDiv>
-        <Label text={this.state.count} supaFunction={this.loveAndHappiness} />
-        {mode}
         <Title />
-        <Delitel buttons={[ 
+        <Delitel buttons={[
           {image: Posts, text: 'POSTS', isSelected: this.state.mode==='posts', onClick: () => this.switchMode('posts') },
           {image: Tagged, text: 'TAGGED', isSelected: this.state.mode==='tagged', onClick: () => this.switchMode('tagged') },
           ]} />

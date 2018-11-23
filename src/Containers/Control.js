@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import StarImg from './../images/star.jpg';
+
 const Star = styled.img`
 	width:15px;
 	height:15px;
 	padding:0px 20px 0px 6px;
-`
+	@media(max-width: 736px){
+		padding:0px 6px 0px 6px;
+	}
+`;
 
 const Name = styled.div`
+	display: inline-block;
 	font-style: normal;
 	font-size: 32px;
 	color: #000000;
-`
+	@media(max-width: 736px){
+		font-size: 22px;
+		text-overflow: ellipsis;
+	}
+`;
 
 const Button = styled.button`
 	height: 28px;
@@ -22,10 +31,15 @@ const Button = styled.button`
 	border:none;
 	border-radius: 3px;
 	margin-right: 10px;
-`
-const Text = styled.div`
-`
+	cursor: pointer;
+	width: ${props => props.buttonWidth};
+	@media(max-width: 736px){
+		order: 1;
+	}
+`;
 
+const Text = styled.div`
+`;
 
 const Points = styled.button`
 	height:28px;
@@ -34,7 +48,8 @@ const Points = styled.button`
 	font-size: 18px;
 	font-weight: bold;
 	border:none;
-`
+	cursor: pointer;
+`;
 
 const ControlContainer = styled.div`
 	display: flex;
@@ -42,7 +57,10 @@ const ControlContainer = styled.div`
 	justify-content: flex-start;
 	align-items:center;
 	width:350px;
-`
+	@media(max-width: 736px){
+		flex-flow: row wrap;
+	}
+`;
 
 export default class Control extends Component {
 	render() {
@@ -50,7 +68,7 @@ export default class Control extends Component {
 			<ControlContainer>
 				<Name>natgeotravel</Name>
 				<Star src = {StarImg} />
-				<Button>Follow</Button>
+				<Button buttonWidth="75%">Follow</Button>
 				<Points>...</Points>
 			</ControlContainer>
 		)

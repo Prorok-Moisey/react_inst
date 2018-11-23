@@ -8,15 +8,18 @@ const DescriptonContainer = styled.div`
 	height: 72px;
 	line-height: 1.5;
 	font-size:16px;
-`
+	@media(max-width: 736px){
+		/*	min-width: 140px*/
+		font-size:14px;
+		padding-top: 20px;
+	}
+`;
 const Bold = styled.div`
 	font-weight: bold;
 	font-style: normal;
-	font-size:16px;
 	color:black;
-`
+`;
 const Link = styled.a`
-	font-size:16px;
 	font-weight: bold;
 	&:link{
 		text-decoration: none;
@@ -29,11 +32,10 @@ const Link = styled.a`
 	&:visited{
 		text-decoration: none;
 		color: #073b69;
-` 
+`;
 const Text = styled.div`
-	font-size:16px;
 	text-align:left;
-`
+`;
 
 class Descripton extends Component {
 	render() {

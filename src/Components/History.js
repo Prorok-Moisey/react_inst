@@ -9,7 +9,8 @@ const HistoryContainer = styled.div`
 	width: 130px;
 	font-size: 14px;
 	font-weight: bold;
-	@media(max-width: 720px){
+	cursor: pointer;
+	@media(max-width: 736px){
 		font-size: 12px;
 		font-weight: normal;
 		text-align: center;
@@ -22,7 +23,7 @@ const Image  = styled.img`
 	width: 76px;
 	border: 1px solid #e6e6e6;
 	border-radius: 100px;
-	@media(max-width: 720px){
+	@media(max-width: 736px){
 		width: 56px;
 		height: 56px;
 	}

@@ -29,6 +29,7 @@ const Link = styled.a`
 	font-size:12px;
 	font-weight: bold;
 	padding-right:10px;
+	cursor: pointer;
 	&:link{
 		text-decoration: none;
 		color: #073b69;
@@ -62,7 +63,7 @@ class Footer extends Component {
 					<Link target="_blank" href="https://www.instagram.com/explore/locations/">DIRECTOTY</Link>
 					<Link target="_blank" href="https://www.instagram.com/directory/suggested/natgeotravel">SUGGESTED PROFILES</Link>
 					<Link target="_blank" href="https://www.instagram.com/directory/hashtags/">HASHTAGS</Link>
-					<Link target="_blank">LANGUAGE</Link>
+					<Link >LANGUAGE</Link>
 				</LinkContainer>
 				<Copy>&copy;2018 INSTAGRAM</Copy>
 			</FooterContainer>

@@ -7,7 +7,11 @@ const HistoriesContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	padding-top: 50px;
-`
+	@media(max-width: 736px){
+		padding-top: 20px;
+	}
+
+`;
 const items=[
 	{ url : './images/paris.jpg', text : 'Paris' },
 	{ url : './images/korea.jpg', text : 'North Korea' },

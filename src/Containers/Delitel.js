@@ -5,7 +5,7 @@ const DelitelContainer = styled.div`
 	margin: auto;
 	padding: 30px 20px 0px 20px;
 	max-width: 930px;
-	@media(max-width: 720px) {
+	@media(max-width: 736px) {
 		padding:0px;
 	}
 `;
@@ -23,18 +23,30 @@ const Image = styled.img`
 	height: 13px;
 	width: 13px;
 	filter: ${props => props.isSelected === true ? "brightness(0%)" : "brightness(100%)"};
+    @media(max-width: 736px){
+	  width: 26px;
+	  height: 26px;
+	}
 `;
 const Element = styled.div`
 	display:flex;
 	align-items:center;
 	margin: 0px 30px 0px 30px;
 	height:100%;
-	border-top:${state => state.isSelected === true ? "1px solid black" : "none"};
-`;
+	cursor: pointer;
+	border-top:${props => props.isSelected === true ? "1px solid black" : "none"};
+	@media(max-width: 736px){
+	  border-top: none;
+	  width: 50%;
+	  justify-content: center;
+	}`;
 const Text = styled.div`
 	font-size: 12px;
 	font-weight: bold;
 	filter:${props => props.isSelected === true ? "opacity(1)" : "opacity(0.5)"};
+	@media(max-width: 736px){
+	  display: none;
+	}
 `;
 
 class Delitel extends Component {
@@ -45,15 +57,15 @@ class Delitel extends Component {
   }
 
   render() {
-  	const {select} = this.state; 
+  	const {isSelected} = this.state;
     return (
       <DelitelContainer>
   		<DelitelBody>
   			{
-  				this.props.buttons.map(function(loneliness) {
-  					return (<Element onClick={loneliness.onClick}>
-  						<Image src={loneliness.image}/>
-  						<Text  >{loneliness.text}</Text></Element>);
+  				this.props.buttons.map((loneliness) => {
+  					return (<Element isSelected = {loneliness.isSelected} onClick={loneliness.onClick}>
+  						<Image isSelected = {loneliness.isSelected} src={loneliness.image}/>
+  						<Text isSelected = {loneliness.isSelected} >{loneliness.text}</Text></Element>);
   				})
   			}
   			</DelitelBody>

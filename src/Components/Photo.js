@@ -9,23 +9,19 @@ const PhotoContainer = styled.div`
 	min-width: 31%;
 	max-width: 31%;	
 	margin-bottom: 3.5%;
-	@media(max-width:720px){
-	min-width: 32.5%;
-	max-width: 32.5%;
-	margin-bottom: 0.5%;
-	}
-	@media(max-width:400px){
-	max-width: 32.5%;
-	min-width: 32.5%;
-	margin-bottom: 0%;
+	cursor: pointer;
+	@media(max-width:736px){
+		min-width: 32.5%;
+		max-width: 32.5%;
+		margin-bottom: 1%;
 	}		
-`
+`;
 const PhotoImg = styled.img`
 	min-width: 100%;
 	max-width: 100%;
 	transition: filter 0.5s;
 	
-`
+`;
 const Middle = styled.div`
 	height: 100%;
 	width: 100%;
@@ -50,19 +46,19 @@ const Middle = styled.div`
 	@media(max-width:600px){
 		flex-direction: column;
 	}
-`
+`;
 const Img = styled.img`
 	height: 20px;
 	width: 20px;
 
-`
+`;
 const Likes = styled.div`
 	@media(min-width:600px){
 		margin-right: 10%;
 	}
-`
+`;
 const Comments = styled.div`
-`
+`;
 class Photo extends Component{
 	render() {
 		return(
